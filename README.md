@@ -12,4 +12,4 @@
 
 [6] Liu, Ze, et al. "Swin transformer: Hierarchical vision transformer using shifted windows." Proceedings of the IEEE/CVF International Conference on Computer Vision. 2021. [MyReview]
 
-[7] Xie, Enze, et al. "SegFormer: Simple and efficient design for semantic segmentation with transformers." Advances in Neural Information Processing Systems 34 (2021): 12077-12090. [**[MySummary]**]([https://velog.io/@victory/%EB%85%BC%EB%AC%B8%EC%9A%94%EC%95%BD-AN-IMAGE-IS-WORTH-16X16-WORDSTRANSFORMERS-FOR-IMAGE-RECOGNITION-AT-SCALE-ViT](https://velog.io/@victory/%EB%85%BC%EB%AC%B8%EC%9A%94%EC%95%BD-SegFormer-Simple-and-Efficient-Design-for-Semantic-Segmentation-with-Transformers))
+[7] Xie, Enze, et al. "SegFormer: Simple and efficient design for semantic segmentation with transformers." Advances in Neural Information Processing Systems 34 (2021): 12077-12090. [**[MySummary]**](https://velog.io/@victory/%EB%85%BC%EB%AC%B8%EC%9A%94%EC%95%BD-SegFormer-Simple-and-Efficient-Design-for-Semantic-Segmentation-with-Transformers)
