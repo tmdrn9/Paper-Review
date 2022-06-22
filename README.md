@@ -7,3 +7,9 @@
 [3]  Hou, Jong-Uk, Han-Ul Jang, and Heung-Kyu Lee. "Hue modification estimation using sensor pattern noise." 2014 IEEE International Conference on Image Processing (ICIP). IEEE, 2014.[**[MyCode]**](https://github.com/tmdrn9/Paper-Review/tree/main/Hue%20modification%20estimation%20using%20sensor%20pattern%20noise)
 
 [4] Dosovitskiy, Alexey, et al. "An image is worth 16x16 words: Transformers for image recognition at scale." arXiv preprint arXiv:2010.11929 (2020). [**[MySummary]**](https://velog.io/@victory/%EB%85%BC%EB%AC%B8%EC%9A%94%EC%95%BD-AN-IMAGE-IS-WORTH-16X16-WORDSTRANSFORMERS-FOR-IMAGE-RECOGNITION-AT-SCALE-ViT)
+
+[5] Dosovitskiy, Alexey, et al. "An image is worth 16x16 words: Transformers for image recognition at scale." arXiv preprint arXiv:2010.11929 (2020). [MyReview]
+
+[6] Liu, Ze, et al. "Swin transformer: Hierarchical vision transformer using shifted windows." Proceedings of the IEEE/CVF International Conference on Computer Vision. 2021. [MyReview]
+
+[7] Xie, Enze, et al. "SegFormer: Simple and efficient design for semantic segmentation with transformers." Advances in Neural Information Processing Systems 34 (2021): 12077-12090. [MyReview]
