@@ -21,3 +21,7 @@
 [10] Isola, Phillip, et al. "Image-to-image translation with conditional adversarial networks." Proceedings of the IEEE conference on computer vision and pattern recognition. 2017.
 
 [11] Dhariwal, Prafulla, and Alexander Nichol. "Diffusion models beat gans on image synthesis." Advances in Neural Information Processing Systems 34 (2021): 8780-8794.
+
+[12] Liu, Yaqi, et al. "Two-Stage Copy-Move Forgery Detection With Self Deep Matching and Proposal SuperGlue." IEEE Transactions on Image Processing 31 (2021): 541-555.
+
+[13] Wu, Yue, Wael Abd-Almageed, and Prem Natarajan. "Busternet: Detecting copy-move image forgery with source/target localization." Proceedings of the European conference on computer vision (ECCV). 2018.
