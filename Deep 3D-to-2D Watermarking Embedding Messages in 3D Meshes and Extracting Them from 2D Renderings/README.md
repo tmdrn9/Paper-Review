@@ -30,7 +30,8 @@ key contributions
 
 크게 encoder, distortion, differentiable renderer, 그리고 decoder 모듈로 구성
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3a264c58-cc60-4d25-b256-1e9a305d7eb1/Untitled.png)
+![pipeline](https://github.com/tmdrn9/Paper-Review/assets/77779116/0ca1b04c-6a65-47ce-9f92-045234cfa20a)
+
 
 ### Definitions
 
