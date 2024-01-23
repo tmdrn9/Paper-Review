@@ -22,9 +22,9 @@
 
 key contributions
 
-- 렌더링된 2D 이미지에서 3D 메쉬로 인코딩된 메시지를 검색하고 3D 워터마킹 사용을 넓힐 수 있는 최초의 3D 대 2D 워터마킹 방법 제시
-- 차별화한 렌더링을 사용함으로써 제안한 방법을 완전히 차별화할 수 있으며, 이를 통해 전체 프레임워크를 차별화 가능한 3D 왜곡 모음으로  end-to-end 훈련 가능(???)
-- 우리의 디코더는 차별화할 수 없는 렌더러로부터 내장된 메시지를 디코딩할 수 있으며, 미세 조정을 통해 더욱 개선될 수 있음dfdfd
+- 렌더링된 2D 이미지에서 3D mesh로 인코딩된 메시지를 검색하고 3D 워터마킹 사용을 넓힐 수 있는 최초의 3D to 2D 워터마킹 방법 제시
+- 미분 가능한 렌더링을 사용함으로써 제안한 방법을 완전히 차별화할 수 있으며, 이를 통해 전체 프레임워크를 차별화 가능한 3D 왜곡 모음으로  end-to-end 훈련 가능
+- 디코더는 미분 불가능한 렌더러로부터 내장된 메시지를 디코딩할 수 있으며, 미세 조정을 통해 개선 가능성 o
 
 ## Method
 
@@ -104,7 +104,8 @@ $$
 I=R_D(\mathbb{M},K,L)\in \mathbb{R}^{H_r\times W_r\times 3}
 $$
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d123c868-bed8-4efc-be67-96c196e90034/Untitled.png)
+![example](https://github.com/tmdrn9/Paper-Review/assets/77779116/427abfee-d028-416d-8fa2-43f6823cb979)
+
 
 ### Decoder
 
@@ -125,28 +126,37 @@ $$
 
 ### Losses
 
-최적화 대상
-
 1. vertex watermarking loss:  $V_e$와 $V$사이의 거리 계산.
-    
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c755ee0e-660e-4358-b582-79591d54b196/Untitled.png)
-    
-    - $w_i$: 각 구성 요소에 대한 가중치로 각 정점 구성 요소에 대한 변화의 민감도 조정 가능.
+
+$$
+L_{vertex}(V,V_{e})=\sum_{i} w^{i}(\frac{\sum_{\alpha}|V^{i}[\alpha]-V^{i}_{e}[\alpha]|}{N_vC_v})
+$$
+
+&ensp;&ensp;  * $w_i$: 각 구성 요소에 대한 가중치로 각 정점 구성 요소에 대한 변화의 민감도 조정 가능.
+
+
 2. texture watermarking loss:  $T_e$와 $T$사이의 거리 계산.
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b129b19a-971a-490c-80c0-d32475ccfc0b/Untitled.png)
+$$
+L_{texture}(T,T_{e})=\frac{\sum_{\alpha}|T[\alpha]-T_{e}[\alpha]|}{H_tW_tC_t}
+$$
     
 3. 2D rendering loss: 원본 메쉬의 렌더링된 이미지 $I_o$와 워터마킹된 메쉬의 렌더링된 이미지 $I_w$의 차이 계산.
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/dbfbf8a8-e9a9-48f7-9eb1-7e9fe90930eb/Untitled.png)
+$$
+L_{image}(I_o,I_w)=\frac{\sum_{\alpha}|I_o[\alpha]-I_w[\alpha]|}{3H_wW_w}
+$$
     
 4. message loss: $M_{rb}$와 원본 $M$ 차이 계산. 디코딩 오류에 불이익을 부여.
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9cbb0b3d-8b08-4bd2-9e78-f40a13355bd5/Untitled.png)
+$$
+L_{message}(M,M_r)=\frac{\sum_{\alpha}|M[\alpha]-M_r[\alpha]|}{N_b}
+$$
     
+$\therefore$ Full loss
 
 $$
 L_{total}=λL_{vertex}+γL_{texture}+δL_{image}+θL_{message}+ ηL_{reg}
 $$
 
-- $L_{reg}$는 regularization loss
+&ensp;&ensp;  *$L_{reg}$는 regularization loss
